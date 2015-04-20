@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">pollKAT</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="PollKatTitle">PollKat</string>
+    <string name="PollKatImage">PollKatImage</string>
+    <string name="title_activity_poll_kat_presenter_participant">PollKatPresenterParticipant
+    </string>
+    <string name="pollKatPresenter">Presenter</string>
+    <string name="pollKatParticipant">Participant</string>
+    <string name="title_activity_presenter">Presenter</string>
+    <string name="pollKatPresenterQuestionBox" />
+    <string name="pollKatSendToServer">Send</string>
+    <string name="pollKATQuestionHint">Type your question</string>
+</resources>
