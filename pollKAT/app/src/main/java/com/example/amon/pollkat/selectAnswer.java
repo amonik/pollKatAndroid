@@ -1,55 +1,45 @@
 package com.example.amon.pollkat;
 
-import android.content.Context;
-import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
-public class PollKatPresenterParticipant extends ActionBarActivity {
-    Button button;
+public class selectAnswer extends ActionBarActivity {
 
+    public RadioGroup rgOpinion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_poll_kat_presenter_participant);
-        addListenerOnButton();
-    }
-    public void onParticipant(View view){
-        Intent intent = new Intent(this, Participant.class);
-        startActivity(intent);
+        setContentView(R.layout.activity_select_answer);
+
+
+        String singleQuestion = getIntent().getStringExtra("question");
+        TextView textView1 = (TextView) findViewById(R.id.textQuestion);
+        textView1.setText(singleQuestion);
+
+        rgOpinion = (RadioGroup) findViewById(R.id.rgOpinion);
+        Button btnSubmit = (Button) findViewById(R.id.saveButton);
 
     }
 
-    public void addListenerOnButton() {
-
-        final Context context = this;
-
-        button = (Button) findViewById(R.id.pollKatPresenterID);
-
-        button.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-
-                Intent intent = new Intent(context,Presenter.class);
-                startActivity(intent);
-
-            }
-
-        });
+    public void saveAnswer(View view){
+        RadioButton selectRadio = (RadioButton) findViewById(rgOpinion.getCheckedRadioButtonId());
+        String opinion = selectRadio.getText().toString();
+        Toast.makeText(getApplicationContext(),opinion, Toast.LENGTH_LONG).show();
 
     }
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_poll_kat_presenter_participant, menu);
+        getMenuInflater().inflate(R.menu.menu_select_answer, menu);
         return true;
     }
 

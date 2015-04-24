@@ -25,7 +25,8 @@
         android:id="@+id/pollKatParticipantID"
         android:width="192sp"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="onParticipant"/>
 
 
 </RelativeLayout>
