@@ -20,7 +20,7 @@ import java.net.URL;
 
 
 public class Presenter extends ActionBarActivity {
-
+    String line = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +60,8 @@ public class Presenter extends ActionBarActivity {
             String q = editText.getText() + "";
             final String qns = q.replace(" ", "%20");
             //new PostQuestion().execute(qns);
+        //}
+    //}
             Thread thrd = new Thread(){
                 @Override
                 public void  run(){
@@ -75,6 +77,7 @@ public class Presenter extends ActionBarActivity {
 
                 }
             };
+            thrd.start();
         }
     }
     private void readStream(InputStream in) {
@@ -97,8 +100,8 @@ public class Presenter extends ActionBarActivity {
             }
         }
     }
-}
-    /*class PostQuestion extends AsyncTask<String, Void, String> {
+}////works perfectly
+ /*   class PostQuestion extends AsyncTask<String, Void, String> {
 
         @Override
         protected String doInBackground(String... que) {//String... means varied number of inputs & is an array
@@ -109,7 +112,10 @@ public class Presenter extends ActionBarActivity {
                 URL url = new URL(ip + "post_question/" + que);
                 HttpURLConnection con = (HttpURLConnection) url.openConnection();
                 readStream(con.getInputStream());
-                return "Posted";
+                if(line.equals("Success!"))
+                    return "Posted";
+                else
+                    return "Failed";
             } catch (Exception e) {
                 e.printStackTrace();
                 return "Failed";
@@ -126,7 +132,7 @@ public class Presenter extends ActionBarActivity {
             BufferedReader reader = null;
             try {
                 reader = new BufferedReader(new InputStreamReader(in));
-                String line = "";
+
                 while ((line = reader.readLine()) != null) {
                     Log.d("pollKAT", line);
 
