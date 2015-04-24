@@ -28,6 +28,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.amon.pollkat.PollKatPresenterParticipant" />
         </activity>
+        <activity
+            android:name=".Participant"
+            android:label="@string/title_activity_participant" >
+        </activity>
+        <activity
+            android:name=".selectAnswer"
+            android:label="@string/title_activity_select_answer" >
+        </activity>
     </application>
 
 </manifest>

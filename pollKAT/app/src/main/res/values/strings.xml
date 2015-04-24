@@ -13,4 +13,6 @@
     <string name="pollKatPresenterQuestionBox" />
     <string name="pollKatSendToServer">Send</string>
     <string name="pollKATQuestionHint">Type your question</string>
+    <string name="title_activity_participant">Participant</string>
+    <string name="title_activity_select_answer">selectAnswer</string>
 </resources>

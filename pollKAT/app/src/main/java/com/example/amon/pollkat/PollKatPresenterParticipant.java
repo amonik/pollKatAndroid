@@ -19,7 +19,11 @@ public class PollKatPresenterParticipant extends ActionBarActivity {
         setContentView(R.layout.activity_poll_kat_presenter_participant);
         addListenerOnButton();
     }
+    public void onParticipant(View view){
+        Intent intent = new Intent(this, Participant.class);
+        startActivity(intent);
 
+    }
 
     public void addListenerOnButton() {
 
