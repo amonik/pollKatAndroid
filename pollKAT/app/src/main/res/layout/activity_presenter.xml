@@ -25,6 +25,7 @@
         android:id="@+id/pollKatSendToServerButton"
         android:layout_below="@+id/pollKatPresenterQuestionBoxID"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:onClick="Send"/>
 
 </RelativeLayout>
