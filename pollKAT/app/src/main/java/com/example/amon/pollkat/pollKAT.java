@@ -28,7 +28,7 @@ public class pollKAT extends ActionBarActivity {
                 Context.MODE_PRIVATE);
 
         SharedPreferences.Editor editor = settings.edit();
-        editor.putString("IP", "http://172.24.104.97:8080/");//"http://192.168.252.28:8080/");
+        editor.putString("IP", "http://192.168.252.28:8080/");
         editor.commit();
 
         Handler handler = new Handler();
