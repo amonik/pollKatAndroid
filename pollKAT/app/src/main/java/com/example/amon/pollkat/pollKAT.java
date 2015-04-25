@@ -1,7 +1,10 @@
 package com.example.amon.pollkat;
 
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Message;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -21,6 +24,13 @@ public class pollKAT extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_poll_kat);
+        SharedPreferences settings = getSharedPreferences("pollKatIP",
+                Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("IP", "http://192.168.252.28:8080/");
+        editor.commit();
+
         Handler handler = new Handler();
 
         handler.postDelayed(new Runnable() {
@@ -32,6 +42,8 @@ public class pollKAT extends ActionBarActivity {
             }
         }, TIME);
     }
+
+
 
 
 

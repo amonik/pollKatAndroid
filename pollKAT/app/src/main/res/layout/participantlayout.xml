@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:id="@+id/partlayout">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text = ""
+        android:id="@+id/pollKatQuestion" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pollKatYes"
+        android:id="@+id/pollKatYesRadioButton"
+        android:checked="false"
+        android:layout_alignTop="@+id/pollKatNoRadioButton"
+        android:layout_toLeftOf="@+id/pollKatNoRadioButton"
+        android:layout_toStartOf="@+id/pollKatNoRadioButton" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pollKatNo"
+        android:id="@+id/pollKatNoRadioButton"
+        android:checked="false"
+        android:layout_below="@+id/pollKatQuestionNumber"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="134dp"
+        android:layout_marginEnd="134dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/pollKatQuestionNumber"
+        android:id="@+id/pollKatQuestionNumber"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="false"
+        android:layout_toEndOf="@+id/pollKatNoRadioButton"
+        android:layout_below="@+id/pollKatQuestion" />
+
+</RelativeLayout>

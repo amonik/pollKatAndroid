@@ -36,7 +36,7 @@ public class Participant extends ActionBarActivity {
         Intent intent = getIntent();
         String qns = intent.getStringExtra(PollKatPresenterParticipant.Extra_Message1);
         //Log.d("Participant", qns);
-        questionList.add("Do you like this course?");
+        questionList.add(qns);//"Do you like this course?");
         //timeList.add("april 24");
 
         // SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,R.layout.listlayout,questionList,timeList);

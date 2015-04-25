@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -19,13 +20,19 @@ import java.net.URL;
 
 
 public class PollKatPresenterParticipant extends ActionBarActivity {
-    Button button;
+
+    //Button button;
     public static String line = "";
     public final static String Extra_Message1 = "com.kavya.qns.MESSAGE";
+
+    ImageButton button;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_poll_kat_presenter_participant);
+        setTitle("PollKat");
         addListenerOnButton();
     }
     public void onParticipant(View view){
@@ -33,7 +40,7 @@ public class PollKatPresenterParticipant extends ActionBarActivity {
             @Override
             public void  run(){
                 try {
-                    String ip = "http://192.168.252.28:8080/";
+                    String ip = "http://172.24.104.97:8080/";//192.168.252.28:8080/";
 
                     URL url = new URL(ip+"request_questions");
                     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -58,10 +65,10 @@ public class PollKatPresenterParticipant extends ActionBarActivity {
         try {
             reader = new BufferedReader(new InputStreamReader(in));
 
-            while ((line = reader.readLine()) != null) {
+            line = reader.readLine();
                 Log.d("pollKAT", line);
                 intent.putExtra(Extra_Message1,line);
-            }
+
             startActivity(intent);
 
 
@@ -84,7 +91,7 @@ public class PollKatPresenterParticipant extends ActionBarActivity {
 
         final Context context = this;
 
-        button = (Button) findViewById(R.id.pollKatPresenterID);
+        button = (ImageButton) findViewById(R.id.pollKatPresenterID);
 
         button.setOnClickListener(new View.OnClickListener() {
 
