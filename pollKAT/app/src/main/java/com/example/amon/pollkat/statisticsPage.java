@@ -43,15 +43,14 @@ public class statisticsPage extends ActionBarActivity {
                             Context.MODE_PRIVATE);
                     String ip = settings.getString("IP", null);
                     Log.d("IP Address", ip);
-                    //String ip = "http://172.24.104.97:8080/";//192.168.252.28:8080/";
-                    String id = "1";
+                    String id = "1";//getIntent().getStringExtra("ID");
                     URL url = new URL(ip+"request_statistics/"+id);
                     HttpURLConnection con = (HttpURLConnection) url.openConnection();
                     readStream(con.getInputStream());
-                    //Log.d("gettingstats",stats);
                     Log.d("getting",line);
                     char yesCount = line.charAt(2);
                     char noCount = line.charAt(4);
+                    line.indexOf("@");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -59,7 +58,6 @@ public class statisticsPage extends ActionBarActivity {
             }
         };
         thrd.start();
-        //Log.d("gettingstats",stats);
     }
 
     private void readStream(InputStream in) {
