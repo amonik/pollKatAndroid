@@ -5,10 +5,16 @@
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+<<<<<<< HEAD
         <option name="gradleHome" value="C:\Program Files\Android\Android Studio\gradle\gradle-2.2.1" />
+=======
+        <option name="gradleHome" value="$APPLICATION_HOME_DIR$/gradle/gradle-2.2.1" />
+        <option name="gradleJvm" value="1.7" />
+>>>>>>> 3281615eeedfd9532d733b10f73eea98329098a3
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/GraphView-4.0.0" />
             <option value="$PROJECT_DIR$/app" />
           </set>
         </option>
@@ -16,4 +22,3 @@
     </option>
   </component>
 </project>
-

@@ -35,7 +35,7 @@
             android:label="@string/title_activity_participant" >
         </activity>
         <activity
-            android:name=".selectAnswer"
+            android:name=".statisticsPage"
             android:label="@string/title_activity_select_answer" >
         </activity>
     </application>

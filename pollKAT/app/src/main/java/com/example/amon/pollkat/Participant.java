@@ -3,32 +3,40 @@ package com.example.amon.pollkat;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
+import com.jjoe64.graphview.GraphView;
+
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 public class Participant extends ActionBarActivity {
     public static ArrayList<String> questionList = new ArrayList<String>();
+<<<<<<< HEAD
     public static ArrayList<String> timeList = new ArrayList<String>();
     public static ArrayList<String> idList = new ArrayList<String>();
     public static ArrayList<String> questions = new ArrayList<String>();
 
+=======
+    //public static ArrayList<String> timeList = new ArrayList<String>();
+    public static ArrayList<String> SplitQuestions;
+    public static String[] splitQns;
+
+    public static String TAG = "qest";
+>>>>>>> 3281615eeedfd9532d733b10f73eea98329098a3
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_participant);
-
-
 
         questionList.clear();
         //timeList.clear();
@@ -36,9 +44,17 @@ public class Participant extends ActionBarActivity {
         //readNames("noteHeaders");
         Intent intent = getIntent();
         String qns = intent.getStringExtra(PollKatPresenterParticipant.Extra_Message1);
+<<<<<<< HEAD
         Log.d("Participant", qns);
 
 
+=======
+        splitQns = qns.split("<--->");
+        SplitQuestions = new ArrayList<String>(Arrays.asList(splitQns));
+        Log.d(TAG, SplitQuestions.toString());
+
+        //Log.d("Participant", qns);
+>>>>>>> 3281615eeedfd9532d733b10f73eea98329098a3
         questionList.add(qns);//"Do you like this course?");
 
 
@@ -70,8 +86,9 @@ public class Participant extends ActionBarActivity {
                         "Position :" + itemPosition + "  ListItem : " + itemValue, Toast.LENGTH_LONG)
                         .show();
 
-                Intent intent = new Intent(getApplicationContext(), selectAnswer.class);
+                Intent intent = new Intent(getApplicationContext(), statisticsPage.class);
                 intent.putExtra("question", itemValue);
+                intent.putExtra("ID","id");//to add id value
                 startActivity(intent);
             }
 
