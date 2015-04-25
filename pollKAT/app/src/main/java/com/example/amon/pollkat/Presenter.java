@@ -1,5 +1,7 @@
 package com.example.amon.pollkat;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -21,6 +23,7 @@ import java.net.URL;
 
 public class Presenter extends ActionBarActivity {
     String line = "";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,7 @@ public class Presenter extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private static String TAG = "IP";
     public void Send(View view) {
         int id = view.getId();
 
@@ -66,7 +70,13 @@ public class Presenter extends ActionBarActivity {
                 @Override
                 public void  run(){
                     try {
-                        String ip = "http://192.168.252.28:8080/";
+
+                        SharedPreferences settings = getSharedPreferences("pollKatIP",
+                                Context.MODE_PRIVATE);
+                        String ip = settings.getString("IP", null);
+                        Log.d(TAG, ip);
+                        //removed this now in shared preferences.
+                        //String ip = "http://192.168.252.28:8080/";
 
                         URL url = new URL(ip+"post_question/"+qns);
                         HttpURLConnection con = (HttpURLConnection) url.openConnection();
