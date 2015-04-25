@@ -48,9 +48,8 @@ public class statisticsPage extends ActionBarActivity {
                     HttpURLConnection con = (HttpURLConnection) url.openConnection();
                     readStream(con.getInputStream());
                     Log.d("getting",line);
-                    char yesCount = line.charAt(2);
-                    char noCount = line.charAt(4);
-                    line.indexOf("@");
+                    String yesCount = line.substring(line.indexOf("@")+1,line.lastIndexOf("@"));
+                    String noCount = line.substring(line.lastIndexOf("@")+1);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

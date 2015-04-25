@@ -3,6 +3,7 @@ package com.example.amon.pollkat;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,7 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.jjoe64.graphview.GraphView;
+//import com.jjoe64.graphview.GraphView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,7 +21,8 @@ import java.util.List;
 
 public class Participant extends ActionBarActivity {
     public static ArrayList<String> questionList = new ArrayList<String>();
-    //public static ArrayList<String> timeList = new ArrayList<String>();
+    public static ArrayList<String> timeList = new ArrayList<String>();
+    public static ArrayList<String> questionTextList = new ArrayList<String>();
     public static ArrayList<String> SplitQuestions;
     public static String[] splitQns;
 
@@ -40,9 +42,14 @@ public class Participant extends ActionBarActivity {
         splitQns = qns.split("<--->");
         SplitQuestions = new ArrayList<String>(Arrays.asList(splitQns));
         Log.d(TAG, SplitQuestions.toString());
+        for(String q :SplitQuestions){
+            timeList.add(q.substring(q.lastIndexOf("@")+1));
+            questionTextList.add(q.substring(q.indexOf("@")+1,q.lastIndexOf("@")));
+        }
 
+        //Log.d("TimeList",timeList);
         //Log.d("Participant", qns);
-        questionList.add(qns);//"Do you like this course?");
+        //questionList.add(qns);//"Do you like this course?");
         //timeList.add("april 24");
 
         // SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,R.layout.listlayout,questionList,timeList);
