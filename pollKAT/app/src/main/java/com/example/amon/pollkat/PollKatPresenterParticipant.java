@@ -8,15 +8,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 
 public class PollKatPresenterParticipant extends ActionBarActivity {
-    Button button;
+    ImageButton button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_poll_kat_presenter_participant);
+        setTitle("PollKat");
         addListenerOnButton();
     }
     public void onParticipant(View view){
@@ -30,7 +32,7 @@ public class PollKatPresenterParticipant extends ActionBarActivity {
 
         final Context context = this;
 
-        button = (Button) findViewById(R.id.pollKatPresenterID);
+        button = (ImageButton) findViewById(R.id.pollKatPresenterID);
 
         button.setOnClickListener(new View.OnClickListener() {
 
