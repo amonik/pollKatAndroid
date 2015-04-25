@@ -15,4 +15,10 @@
     <string name="pollKATQuestionHint">Type your question</string>
     <string name="title_activity_participant">Participant</string>
     <string name="title_activity_select_answer">selectAnswer</string>
+    <string name="pollKatParticipantQuestion" />
+    <string name="pollKatYes">Yes</string>
+    <string name="pollKatNo">No</string>
+    <string name="pollKatTime" />
+    <string name="pollKatSubmitQuestionButton">Submit</string>
+    <string name="pollKatQuestionNumber" />
 </resources>
