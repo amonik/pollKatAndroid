@@ -1,1 +1,2 @@
 include ':GraphView-4.0.0'':app'
+include ':GraphView-4.0.0'
