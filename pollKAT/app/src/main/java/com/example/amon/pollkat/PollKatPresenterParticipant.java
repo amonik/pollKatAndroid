@@ -21,6 +21,7 @@ public class PollKatPresenterParticipant extends ActionBarActivity {
     }
     public void onParticipant(View view){
         Intent intent = new Intent(this, Participant.class);
+        //intent.putExtra("list")
         startActivity(intent);
 
     }
