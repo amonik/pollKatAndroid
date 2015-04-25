@@ -3,6 +3,7 @@ package com.example.amon.pollkat;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,6 +24,8 @@ public class Participant extends ActionBarActivity {
     //public static ArrayList<String> timeList = new ArrayList<String>();
     public static ArrayList<String> SplitQuestions;
     public static String[] splitQns;
+    public static String questionID;
+    public static ArrayList<String> questionIDList= new ArrayList<String>();
 
     public static String TAG = "qest";
 
@@ -40,6 +43,12 @@ public class Participant extends ActionBarActivity {
         splitQns = qns.split("<--->");
         SplitQuestions = new ArrayList<String>(Arrays.asList(splitQns));
         Log.d(TAG, SplitQuestions.toString());
+        for (String s: SplitQuestions){
+            questionIDList.add(s.substring(0, s.indexOf("@")));
+
+
+        }
+
 
         //Log.d("Participant", qns);
         questionList.add(qns);//"Do you like this course?");
