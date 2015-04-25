@@ -32,6 +32,8 @@ public class Participant extends ActionBarActivity {
 
     public static ArrayList<String> SplitQuestions;
     public static String[] splitQns;
+    public static String questionID;
+    public static ArrayList<String> questionIDList= new ArrayList<String>();
 
     public static String TAG = "qest";
 
@@ -53,10 +55,19 @@ public class Participant extends ActionBarActivity {
         splitQns = qns.split("<--->");
         SplitQuestions = new ArrayList<String>(Arrays.asList(splitQns));
         Log.d(TAG, SplitQuestions.toString());
+
+        for (String s: SplitQuestions){
+            questionIDList.add(s.substring(0, s.indexOf("@")));
+
+
+        }
+
+
         for(String q :SplitQuestions){
             timeList.add(q.substring(q.lastIndexOf("@")+1));
             questionTextList.add(q.substring(q.indexOf("@")+1,q.lastIndexOf("@")));
         }
+
 
         //Log.d("TimeList",timeList);
         //Log.d("Participant", qns);
