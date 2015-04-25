@@ -3,14 +3,12 @@ package com.example.amon.pollkat;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
 import com.jjoe64.graphview.GraphView;
@@ -72,8 +70,9 @@ public class Participant extends ActionBarActivity {
                         "Position :" + itemPosition + "  ListItem : " + itemValue, Toast.LENGTH_LONG)
                         .show();
 
-                Intent intent = new Intent(getApplicationContext(), selectAnswer.class);
+                Intent intent = new Intent(getApplicationContext(), statisticsPage.class);
                 intent.putExtra("question", itemValue);
+                intent.putExtra("ID","id");//to add id value
                 startActivity(intent);
             }
 
