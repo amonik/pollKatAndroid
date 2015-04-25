@@ -65,7 +65,7 @@ public class Presenter extends ActionBarActivity {
             final String qns = q.replace(" ", "%20");
             //new PostQuestion().execute(qns);
         //}
-    //}
+   // }
             Thread thrd = new Thread(){
                 @Override
                 public void  run(){
@@ -117,8 +117,11 @@ public class Presenter extends ActionBarActivity {
         protected String doInBackground(String... que) {//String... means varied number of inputs & is an array
             // automatically done in another thread
             try {
-                String ip = "http://192.168.252.28:8080/";
-
+                //String ip = "http://192.168.252.28:8080/";
+                SharedPreferences settings = getSharedPreferences("pollKatIP",
+                        Context.MODE_PRIVATE);
+                String ip = settings.getString("IP", null);
+                Log.d(TAG, ip);
                 URL url = new URL(ip + "post_question/" + que);
                 HttpURLConnection con = (HttpURLConnection) url.openConnection();
                 readStream(con.getInputStream());
@@ -143,10 +146,10 @@ public class Presenter extends ActionBarActivity {
             try {
                 reader = new BufferedReader(new InputStreamReader(in));
 
-                while ((line = reader.readLine()) != null) {
+                line = reader.readLine();
                     Log.d("pollKAT", line);
 
-                }
+
             } catch (IOException e) {
                 e.printStackTrace();
 
@@ -163,7 +166,7 @@ public class Presenter extends ActionBarActivity {
             }
         }
     }
-}*/
+}
 /*class NetworkThrd implements Runnable{
 
 

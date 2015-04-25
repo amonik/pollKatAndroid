@@ -2,6 +2,7 @@ package com.example.amon.pollkat;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -40,7 +41,11 @@ public class PollKatPresenterParticipant extends ActionBarActivity {
             @Override
             public void  run(){
                 try {
-                    String ip = "http://172.24.104.97:8080/";//192.168.252.28:8080/";
+                    SharedPreferences settings = getSharedPreferences("pollKatIP",
+                            Context.MODE_PRIVATE);
+                    String ip = settings.getString("IP", null);
+                    Log.d("IP Address", ip);
+                    //String ip = "http://172.24.104.97:8080/";//192.168.252.28:8080/";
 
                     URL url = new URL(ip+"request_questions");
                     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -52,10 +57,6 @@ public class PollKatPresenterParticipant extends ActionBarActivity {
             }
         };
         thrd.start();
-        //Log.d("questions",line);
-        //Intent intent = new Intent(this, Participant.class);
-        //intent.putExtra("QuestionsString",line);
-        //startActivity(intent);
 
     }
 
@@ -67,7 +68,7 @@ public class PollKatPresenterParticipant extends ActionBarActivity {
 
             line = reader.readLine();
                 Log.d("pollKAT", line);
-                intent.putExtra(Extra_Message1,line);
+                intent.putExtra(Extra_Message1, line);
 
             startActivity(intent);
 
