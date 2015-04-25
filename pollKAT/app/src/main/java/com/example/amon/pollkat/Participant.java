@@ -18,8 +18,9 @@ import java.util.ArrayList;
 
 public class Participant extends ActionBarActivity {
     public static ArrayList<String> questionList = new ArrayList<String>();
-    //public static ArrayList<String> timeList = new ArrayList<String>();
-
+    public static ArrayList<String> timeList = new ArrayList<String>();
+    public static ArrayList<String> idList = new ArrayList<String>();
+    public static ArrayList<String> questions = new ArrayList<String>();
 
 
     @Override
@@ -35,9 +36,14 @@ public class Participant extends ActionBarActivity {
         //readNames("noteHeaders");
         Intent intent = getIntent();
         String qns = intent.getStringExtra(PollKatPresenterParticipant.Extra_Message1);
-        //Log.d("Participant", qns);
+        Log.d("Participant", qns);
+
+
         questionList.add(qns);//"Do you like this course?");
-        //timeList.add("april 24");
+
+
+
+
 
         // SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,R.layout.listlayout,questionList,timeList);
         //adapter.setViewBinder(VIEW_BINDER);
