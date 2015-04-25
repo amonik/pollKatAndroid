@@ -22,14 +22,14 @@ import java.util.List;
 public class Participant extends ActionBarActivity {
     public static ArrayList<String> questionList = new ArrayList<String>();
     public static ArrayList<String> timeList = new ArrayList<String>();
-<<<<<<< HEAD
+
     public static ArrayList<String> questionTextList = new ArrayList<String>();
-=======
+
     public static ArrayList<String> idList = new ArrayList<String>();
     public static ArrayList<String> questions = new ArrayList<String>();
 
     //public static ArrayList<String> timeList = new ArrayList<String>();
->>>>>>> origin/master
+
     public static ArrayList<String> SplitQuestions;
     public static String[] splitQns;
 
@@ -60,17 +60,17 @@ public class Participant extends ActionBarActivity {
 
         //Log.d("TimeList",timeList);
         //Log.d("Participant", qns);
-<<<<<<< HEAD
+
         //questionList.add(qns);//"Do you like this course?");
         //timeList.add("april 24");
-=======
+
 
         questionList.add(qns);//"Do you like this course?");
 
 
 
 
->>>>>>> origin/master
+
 
         // SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,R.layout.listlayout,questionList,timeList);
         //adapter.setViewBinder(VIEW_BINDER);
