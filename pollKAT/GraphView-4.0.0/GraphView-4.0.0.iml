@@ -6,6 +6,14 @@
         <option name="GRADLE_PROJECT_PATH" value=":GraphView-4.0.0" />
       </configuration>
     </facet>
+<<<<<<< HEAD
+=======
+    <facet type="java-gradle" name="Java-Gradle">
+      <configuration>
+        <option name="BUILD_FOLDER_PATH" value="$MODULE_DIR$/build" />
+      </configuration>
+    </facet>
+>>>>>>> origin/master
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
