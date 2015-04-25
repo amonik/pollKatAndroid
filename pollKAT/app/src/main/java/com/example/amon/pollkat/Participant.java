@@ -3,6 +3,7 @@ package com.example.amon.pollkat;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -32,6 +33,9 @@ public class Participant extends ActionBarActivity {
         //timeList.clear();
         // read from server
         //readNames("noteHeaders");
+        Intent intent = getIntent();
+        String qns = intent.getStringExtra(PollKatPresenterParticipant.Extra_Message1);
+        //Log.d("Participant", qns);
         questionList.add("Do you like this course?");
         //timeList.add("april 24");
 
